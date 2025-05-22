@@ -1,213 +1,168 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services - GrowthWave Digital</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    :root {
-      --glass-bg: rgba(255, 255, 255, 0.1);
-      --border-color: rgba(255, 255, 255, 0.25);
-      --highlight: #4ea8de;
-      --text-light: #e4e4e4;
-    }
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fdfdfd;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
 
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('img2/1981-digital-bf9sZBcGQl4-unsplash.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text-light);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+/* Header */
+header {
+    background: rgba(44, 62, 80, 0.8);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    backdrop-filter: saturate(180%) blur(20px);
+}
 
-    header {
-      padding: 5rem 1rem 2rem;
-      text-align: center;
-      backdrop-filter: blur(12px);
-      background: var(--glass-bg);
-      border-radius: 20px;
-      margin: 3rem auto 2rem;
-      max-width: 900px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Services Section */
+.tm-service-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e1e1e1;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tm-service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tm-service-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.tm-service-text {
+    color: #555;
+}
+
+/* Primary Text Color */
+.tm-text-primary {
+    color: #3498db;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #3498db;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Contact Form */
+form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* About Section Glass Effect */
+.section-glass {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    margin-bottom: 50px;
+}
+
+.about-info h2 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.about-info p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 30px 20px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .tm-service-img {
+        height: 180px;
     }
 
     header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: white;
+        font-size: 2.2rem;
     }
 
-    header p {
-      font-size: 1.25rem;
-      color: #dcdcdc;
-      margin-bottom: 0;
+    .section-glass {
+        padding: 30px 15px;
     }
+}
 
-    .services-container {
-      max-width: 1200px;
-      margin: 0 auto 4rem;
-      padding: 0 1rem;
-    }
-
-    .service-card {
-      background: var(--glass-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      color: var(--text-light);
-      transition: transform 0.3s ease, background 0.3s ease;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .service-card img {
-      height: 250px;
-      width: 100%;
-      object-fit: cover;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-    }
-
-    .service-body {
-      padding: 1.5rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .service-body h4 {
-      color: var(--highlight);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      font-size: 1.75rem;
-    }
-
-    .service-body p {
-      flex-grow: 1;
-      font-size: 1rem;
-      line-height: 1.4;
-      margin-bottom: 1.25rem;
-      color: #d4d4d4;
-    }
-
-    .btn-main {
-      align-self: start;
-      padding: 10px 25px;
-      border-radius: 50px;
-      background-color: var(--highlight);
-      border: none;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .btn-main:hover {
-      background-color: #3498db;
-      transform: translateY(-3px);
-    }
-
-    .additional-info {
-      max-width: 900px;
-      margin: 0 auto 3rem;
-      padding: 1rem 2rem;
-      backdrop-filter: blur(12px);
-      background: var(--glass-bg);
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      color: #dcdcdc;
-    }
-
-    .additional-info h3 {
-      color: var(--highlight);
-      margin-bottom: 1rem;
-      font-weight: 700;
-      font-size: 2rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #ccc;
-      margin-top: auto;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>Our Services</h1>
-    <p>Explore the digital marketing services we offer to boost your business.</p>
-  </header>
-
-  <main class="services-container">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="service-card">
-          <img src="img2/1981-digital-bf9sZBcGQl4-unsplash.jpg" alt="SEO Optimization" />
-          <div class="service-body">
-            <h4>SEO Optimization</h4>
-            <p>Boost your website ranking and get more organic traffic with our expert SEO strategies. Our team uses advanced techniques to drive quality traffic and improve your site’s visibility on search engines.</p>
-            <a href="#" class="btn-main">Learn More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="service-card">
-          <img src="img2/istockphoto-1363405296-612x612.webp" alt="Social Media Marketing" />
-          <div class="service-body">
-            <h4>Social Media Marketing</h4>
-            <p>Increase brand awareness and engage with customers on Facebook, Instagram, and LinkedIn. Our social media campaigns are designed to grow your audience, enhance customer loyalty, and drive conversions.</p>
-            <a href="#" class="btn-main">Learn More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="service-card">
-          <img src="img2/istockphoto-2156152325-612x612.webp" alt="PPC Advertising" />
-          <div class="service-body">
-            <h4>PPC Advertising</h4>
-            <p>Maximize your ROI with high-converting Google and Facebook Ads. We craft targeted ad campaigns that attract qualified leads and drive results, ensuring you get the most out of your marketing budget.</p>
-            <a href="#" class="btn-main">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <section class="additional-info mt-5">
-      <h3>Why Choose Us?</h3>
-      <p>At GrowthWave Digital, we are committed to delivering top-notch digital marketing solutions that provide measurable results. Our expert team works with you at every stage to ensure that our strategies align with your business goals. With our extensive experience, we create customized marketing campaigns that elevate your brand and attract new customers.</p>
-      <p>We believe in the power of data-driven strategies, leveraging analytics to continuously optimize campaigns for maximum impact. Whether you're looking to boost your SEO, expand your social media presence, or run highly effective PPC campaigns, we have the expertise to help your business grow.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 GrowthWave Digital. Premium Digital Marketing Solutions.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
-
-</html>
