@@ -1,313 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GrowthWave Digital | Elevate Your Brand</title>
-  <meta name="description" content="GrowthWave Digital delivers premium digital marketing solutions to elevate your brand with performance marketing, global reach, and brand acceleration." />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    :root {
-      --glass-bg: rgba(255, 255, 255, 0.1);
-      --border-color: rgba(255, 255, 255, 0.25);
-      --highlight: #4ea8de;
-      --highlight-gradient: linear-gradient(135deg, #4ea8de 0%, #3b74d1 100%);
-      --text-light: #e4e4e4;
-      --text-light-soft: #cfd9e4;
-      --text-dark: #1b1b1b;
-      --shadow-light: rgba(78, 168, 222, 0.4);
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('img/sumup-KqiykWgHBtQ-unsplash.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text-light-soft);
-      overflow-x: hidden;
-    }
-
-    /* Navbar */
-    .navbar {
-      backdrop-filter: blur(15px);
-      background-color: rgba(255, 255, 255, 0.07);
-      border-bottom: 1px solid var(--border-color);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: background-color 0.3s ease;
-      z-index: 1000;
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      color: white;
-      font-size: 1.9rem;
-      letter-spacing: 1.2px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    }
-
-    .nav-link {
-      color: white !important;
-      font-weight: 600;
-      margin-left: 1.5rem;
-      letter-spacing: 0.05em;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link:focus {
-      color: var(--highlight);
-      outline: none;
-    }
-
-    /* Active nav underline animation */
-    .nav-link.active::after,
-    .nav-link[aria-current="page"]::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: var(--highlight);
-      bottom: -6px;
-      left: 0;
-      border-radius: 2px;
-      animation: underlineGrow 0.3s ease forwards;
-    }
-
-    @keyframes underlineGrow {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    /* Navbar toggler color */
-    .navbar-toggler {
-      border-color: transparent;
-      filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 0.2));
-    }
-
-    .navbar-toggler-icon {
-      filter: invert(1);
-      transition: filter 0.3s ease;
-    }
-
-    .navbar-toggler:hover .navbar-toggler-icon {
-      filter: invert(0.6) drop-shadow(0 0 5px var(--highlight));
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 95vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      padding: 0 1rem;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(27, 27, 27, 0.6) 0%, rgba(27, 27, 27, 0.85) 100%);
-      z-index: 0;
-      border-radius: 25px;
-    }
-
-    .hero .content {
-      position: relative;
-      background: var(--glass-bg);
-      padding: 4rem 3rem;
-      border-radius: 25px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-      border: 1px solid var(--border-color);
-      backdrop-filter: blur(15px);
-      max-width: 720px;
-      animation: fadeInUp 1s ease forwards;
-      opacity: 0;
-      transform: translateY(25px);
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero h1 {
-      font-size: 3.75rem;
-      color: white;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    }
-
-    .hero p {
-      font-size: 1.35rem;
-      margin-top: 1rem;
-      color: var(--text-light-soft);
-      line-height: 1.6;
-      font-weight: 500;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    }
-
-    .btn-main {
-      margin-top: 2.5rem;
-      padding: 14px 36px;
-      border-radius: 50px;
-      background: var(--highlight-gradient);
-      color: white;
-      font-weight: 700;
-      border: none;
-      box-shadow: 0 6px 12px var(--shadow-light);
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      user-select: none;
-    }
-
-    .btn-main:hover {
-      background: linear-gradient(135deg, #3b74d1 0%, #4ea8de 100%);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px var(--shadow-light);
-    }
-
-    .btn-main:active {
-      transform: translateY(1px);
-      box-shadow: 0 4px 8px var(--shadow-light);
-    }
-
-    /* Features Section */
-    .features {
-      padding: 4rem 1rem 6rem;
-    }
-
-    .features h2 {
-      color: white;
-      font-size: 2.75rem;
-      font-weight: 800;
-      margin-bottom: 3rem;
-      text-align: center;
-      letter-spacing: 0.06em;
-      text-shadow: 0 3px 6px rgba(0,0,0,0.6);
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.06);
-      border: none;
-      border-radius: 22px;
-      padding: 2.5rem 2rem;
-      color: white;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-      transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
-      cursor: default;
-      user-select: none;
-    }
-
-    .card:hover {
-      transform: translateY(-12px) scale(1.03);
-      background: rgba(255, 255, 255, 0.14);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-    }
-
-    .card i {
-      font-size: 2.8rem;
-      margin-bottom: 1.25rem;
-      color: var(--highlight);
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      transition: color 0.3s ease;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem;
-      background-color: rgba(10, 10, 10, 0.85);
-      color: #aaa;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      margin-top: 5rem;
-      user-select: none;
-      box-shadow: inset 0 1px 8px rgba(255, 255, 255, 0.05);
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-
-      .hero .content {
-        padding: 3rem 2rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home - GrowthWave Digital</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark py-3" role="navigation" aria-label="Primary Navigation">
-    <div class="container">
-      <a class="navbar-brand" href="#" tabindex="0">GrowthWave Digital</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#" tabindex="0">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html" tabindex="0">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html" tabindex="0">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html" tabindex="0">Contact</a></li>
-        </ul>
+<body
+  style="
+    background-image: url('img2/1981-digital-bf9sZBcGQl4-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  "
+>
+  <!-- Header Section -->
+  <header class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center py-5">
+        <h1 class="tm-text-primary">Welcome to GrowthWave Digital</h1>
+        <p>Your partner in digital growth and success.</p>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <section class="hero" role="banner">
-    <div class="content">
-      <h1>Empowering Brands Digitally</h1>
-      <p>Strategic marketing, stunning visuals & growth that speaks. Welcome to the future of digital marketing.</p>
-      <a href="contact.html" class="btn-main" role="button" tabindex="0">Let’s Work Together</a>
-    </div>
-  </section>
-
-  <section class="features container" role="region" aria-labelledby="featuresTitle">
-    <h2 id="featuresTitle">What We Offer</h2>
+  <!-- Services Section -->
+  <section class="container my-5">
     <div class="row">
-      <article class="col-md-4 mb-4" tabindex="0" aria-label="Performance Marketing service">
-        <div class="card">
-          <i class="fas fa-bolt" aria-hidden="true"></i>
-          <h5>Performance Marketing</h5>
-          <p>Result-driven campaigns that generate real ROI through paid media and analytics.</p>
+      <div class="col-md-4 mb-4">
+        <div class="tm-service-box">
+          <img
+            src="img2/service1.jpg"
+            alt="SEO Service"
+            class="tm-service-img"
+          />
+          <h3 class="tm-text-primary">SEO Optimization</h3>
+          <p class="tm-service-text">
+            Improve your search engine rankings and attract more visitors.
+          </p>
+          <a href="#" class="btn-primary learn-more-btn">Learn More</a>
         </div>
-      </article>
-      <article class="col-md-4 mb-4" tabindex="0" aria-label="Global Reach service">
-        <div class="card">
-          <i class="fas fa-globe" aria-hidden="true"></i>
-          <h5>Global Reach</h5>
-          <p>Expand your audience with campaigns tailored for global impact and diverse markets.</p>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="tm-service-box">
+          <img
+            src="img2/service2.jpg"
+            alt="Social Media Management"
+            class="tm-service-img"
+          />
+          <h3 class="tm-text-primary">Social Media Management</h3>
+          <p class="tm-service-text">
+            Engage your audience across multiple platforms with targeted content.
+          </p>
+          <a href="#" class="btn-primary learn-more-btn">Learn More</a>
         </div>
-      </article>
-      <article class="col-md-4 mb-4" tabindex="0" aria-label="Brand Acceleration service">
-        <div class="card">
-          <i class="fas fa-rocket" aria-hidden="true"></i>
-          <h5>Brand Acceleration</h5>
-          <p>We help startups and brands grow fast with premium web design and growth hacks.</p>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="tm-service-box">
+          <img
+            src="img2/service3.jpg"
+            alt="Web Development"
+            class="tm-service-img"
+          />
+          <h3 class="tm-text-primary">Web Development</h3>
+          <p class="tm-service-text">
+            Build responsive and modern websites tailored to your brand.
+          </p>
+          <a href="#" class="btn-primary learn-more-btn">Learn More</a>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 GrowthWave Digital. Premium Digital Marketing Solutions.</p>
+  <!-- Footer Section -->
+  <footer class="container-fluid">
+    <div class="row">
+      <p class="col-lg-9 col-md-8 mb-5 mb-md-0 text-center">
+        Copyright &copy; 2025
+        <span class="tm-text-primary">GrowthWave Digital</span>
+      </p>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap Bundle (CDN) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
   <script src="js/script.js"></script>
 </body>
-</html>
 
+</html>
