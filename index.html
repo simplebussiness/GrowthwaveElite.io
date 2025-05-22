@@ -1,20 +1,23 @@
-<!-- index.html (Premium Version) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GrowthWave Digital | Elevate Your Brand</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <meta name="description" content="GrowthWave Digital delivers premium digital marketing solutions to elevate your brand with performance marketing, global reach, and brand acceleration." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
     :root {
       --glass-bg: rgba(255, 255, 255, 0.1);
       --border-color: rgba(255, 255, 255, 0.25);
       --highlight: #4ea8de;
+      --highlight-gradient: linear-gradient(135deg, #4ea8de 0%, #3b74d1 100%);
       --text-light: #e4e4e4;
+      --text-light-soft: #cfd9e4;
       --text-dark: #1b1b1b;
+      --shadow-light: rgba(78, 168, 222, 0.4);
     }
 
     body {
@@ -23,27 +26,78 @@
       background: url('img/sumup-KqiykWgHBtQ-unsplash.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text-light);
+      color: var(--text-light-soft);
+      overflow-x: hidden;
     }
 
+    /* Navbar */
     .navbar {
       backdrop-filter: blur(15px);
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255, 255, 255, 0.07);
       border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
     }
 
     .navbar-brand {
-      font-weight: bold;
+      font-weight: 700;
       color: white;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
+      letter-spacing: 1.2px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
 
     .nav-link {
       color: white !important;
-      font-weight: 500;
-      margin-left: 1rem;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      letter-spacing: 0.05em;
+      position: relative;
+      transition: color 0.3s ease;
     }
 
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--highlight);
+      outline: none;
+    }
+
+    /* Active nav underline animation */
+    .nav-link.active::after,
+    .nav-link[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: var(--highlight);
+      bottom: -6px;
+      left: 0;
+      border-radius: 2px;
+      animation: underlineGrow 0.3s ease forwards;
+    }
+
+    @keyframes underlineGrow {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    /* Navbar toggler color */
+    .navbar-toggler {
+      border-color: transparent;
+      filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 0.2));
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+      transition: filter 0.3s ease;
+    }
+
+    .navbar-toggler:hover .navbar-toggler-icon {
+      filter: invert(0.6) drop-shadow(0 0 5px var(--highlight));
+    }
+
+    /* Hero Section */
     .hero {
       height: 95vh;
       display: flex;
@@ -52,138 +106,199 @@
       text-align: center;
       position: relative;
       z-index: 1;
+      padding: 0 1rem;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(27, 27, 27, 0.6) 0%, rgba(27, 27, 27, 0.85) 100%);
+      z-index: 0;
+      border-radius: 25px;
     }
 
     .hero .content {
+      position: relative;
       background: var(--glass-bg);
-      padding: 3rem 2rem;
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      padding: 4rem 3rem;
+      border-radius: 25px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
       border: 1px solid var(--border-color);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(15px);
+      max-width: 720px;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3.75rem;
       color: white;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       margin-top: 1rem;
-      color: #eaeaea;
+      color: var(--text-light-soft);
+      line-height: 1.6;
+      font-weight: 500;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
     }
 
     .btn-main {
-      margin-top: 2rem;
-      padding: 12px 30px;
+      margin-top: 2.5rem;
+      padding: 14px 36px;
       border-radius: 50px;
-      background-color: var(--highlight);
+      background: var(--highlight-gradient);
       color: white;
-      font-weight: 600;
+      font-weight: 700;
       border: none;
-      transition: all 0.3s ease-in-out;
+      box-shadow: 0 6px 12px var(--shadow-light);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none;
     }
 
     .btn-main:hover {
-      background-color: #3498db;
+      background: linear-gradient(135deg, #3b74d1 0%, #4ea8de 100%);
       transform: translateY(-3px);
+      box-shadow: 0 10px 20px var(--shadow-light);
     }
 
+    .btn-main:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 8px var(--shadow-light);
+    }
+
+    /* Features Section */
     .features {
-      padding: 4rem 1rem;
+      padding: 4rem 1rem 6rem;
     }
 
     .features h2 {
       color: white;
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-size: 2.75rem;
+      font-weight: 800;
       margin-bottom: 3rem;
       text-align: center;
+      letter-spacing: 0.06em;
+      text-shadow: 0 3px 6px rgba(0,0,0,0.6);
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.06);
       border: none;
-      border-radius: 20px;
-      padding: 2rem;
+      border-radius: 22px;
+      padding: 2.5rem 2rem;
       color: white;
       text-align: center;
-      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+      transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+      cursor: default;
+      user-select: none;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-12px) scale(1.03);
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
     }
 
     .card i {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2.8rem;
+      margin-bottom: 1.25rem;
       color: var(--highlight);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: color 0.3s ease;
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      padding: 2rem 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #ccc;
-      margin-top: 4rem;
+      padding: 2.5rem 1rem;
+      background-color: rgba(10, 10, 10, 0.85);
+      color: #aaa;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-top: 5rem;
+      user-select: none;
+      box-shadow: inset 0 1px 8px rgba(255, 255, 255, 0.05);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero .content {
+        padding: 3rem 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark py-3">
+  <nav class="navbar navbar-expand-lg navbar-dark py-3" role="navigation" aria-label="Primary Navigation">
     <div class="container">
-      <a class="navbar-brand" href="#">GrowthWave Digital</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <a class="navbar-brand" href="#" tabindex="0">GrowthWave Digital</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#" tabindex="0">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html" tabindex="0">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html" tabindex="0">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html" tabindex="0">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <section class="hero">
+  <section class="hero" role="banner">
     <div class="content">
       <h1>Empowering Brands Digitally</h1>
       <p>Strategic marketing, stunning visuals & growth that speaks. Welcome to the future of digital marketing.</p>
-      <a href="contact.html" class="btn-main">Let’s Work Together</a>
+      <a href="contact.html" class="btn-main" role="button" tabindex="0">Let’s Work Together</a>
     </div>
   </section>
 
-  <section class="features container">
-    <h2>What We Offer</h2>
+  <section class="features container" role="region" aria-labelledby="featuresTitle">
+    <h2 id="featuresTitle">What We Offer</h2>
     <div class="row">
-      <div class="col-md-4 mb-4">
+      <article class="col-md-4 mb-4" tabindex="0" aria-label="Performance Marketing service">
         <div class="card">
-          <i class="fas fa-bolt"></i>
+          <i class="fas fa-bolt" aria-hidden="true"></i>
           <h5>Performance Marketing</h5>
           <p>Result-driven campaigns that generate real ROI through paid media and analytics.</p>
         </div>
-      </div>
-      <div class="col-md-4 mb-4">
+      </article>
+      <article class="col-md-4 mb-4" tabindex="0" aria-label="Global Reach service">
         <div class="card">
-          <i class="fas fa-globe"></i>
+          <i class="fas fa-globe" aria-hidden="true"></i>
           <h5>Global Reach</h5>
           <p>Expand your audience with campaigns tailored for global impact and diverse markets.</p>
         </div>
-      </div>
-      <div class="col-md-4 mb-4">
+      </article>
+      <article class="col-md-4 mb-4" tabindex="0" aria-label="Brand Acceleration service">
         <div class="card">
-          <i class="fas fa-rocket"></i>
+          <i class="fas fa-rocket" aria-hidden="true"></i>
           <h5>Brand Acceleration</h5>
           <p>We help startups and brands grow fast with premium web design and growth hacks.</p>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -195,3 +310,4 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
