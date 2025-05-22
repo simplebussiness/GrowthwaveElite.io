@@ -2,74 +2,174 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - GrowthWave Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - GrowthWave Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --border-color: rgba(255, 255, 255, 0.25);
+      --highlight: #4ea8de;
+      --text-light: #e4e4e4;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('img2/1981-digital-bf9sZBcGQl4-unsplash.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 5rem 1rem 2rem;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      background: var(--glass-bg);
+      border-radius: 20px;
+      margin: 3rem auto 2rem;
+      max-width: 900px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      color: #dcdcdc;
+      margin-bottom: 0;
+    }
+
+    main.container {
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+      backdrop-filter: blur(12px);
+      background: var(--glass-bg);
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      color: #dcdcdc;
+    }
+
+    form label {
+      font-weight: 600;
+      color: var(--highlight);
+    }
+
+    form input,
+    form textarea {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-light);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: var(--highlight);
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      box-shadow: 0 0 10px var(--highlight);
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button.btn-primary {
+      background-color: var(--highlight);
+      border: none;
+      border-radius: 50px;
+      padding: 10px 30px;
+      font-weight: 700;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    button.btn-primary:hover {
+      background-color: #3498db;
+      transform: translateY(-3px);
+    }
+
+    .additional-info {
+      margin-top: 3rem;
+    }
+
+    .additional-info h3 {
+      color: var(--highlight);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #ccc;
+      margin-top: auto;
+    }
+  </style>
 </head>
 
-<body style="background-image: url('img2/1981-digital-bf9sZBcGQl4-unsplash.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <!-- Header Section -->
-    <header class="container-fluid">
-        <div class="row">
-            <div class="col-12 text-center py-5">
-                <h1 class="tm-text-primary">Contact GrowthWave Digital</h1>
-                <p>Let's talk about how we can help you grow your business.</p>
-            </div>
-        </div>
-    </header>
+<body>
+  <header>
+    <h1>Contact GrowthWave Digital</h1>
+    <p>Let's talk about how we can help you grow your business.</p>
+  </header>
 
-    <!-- Contact Form Section -->
-    <section class="container my-5">
-        <form>
-            <div class="form-row">
-                <div class="col-md-6 mb-3">
-                    <label for="name">Your Name</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-12 mb-3">
-                    <label for="message">Your Message</label>
-                    <textarea class="form-control" id="message" rows="4" required></textarea>
-                </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Send Message</button>
-        </form>
+  <main class="container">
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="name" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" required />
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Your Message</label>
+        <textarea class="form-control" id="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
 
-        <!-- Additional Information Section -->
-        <div class="row mt-5">
-            <div class="col-12">
-                <h3 class="tm-text-primary">Get in Touch</h3>
-                <p>If you have any questions or would like to learn more about our services, feel free to reach out. Our team is here to help you grow your digital presence and take your business to the next level. We look forward to hearing from you!</p>
-                <p>Our office hours are Monday to Friday, from 9 AM to 5 PM. You can also follow us on social media to stay up-to-date with our latest news and offers.</p>
-            </div>
-        </div>
+    <section class="additional-info">
+      <h3>Get in Touch</h3>
+      <p>If you have any questions or would like to learn more about our services, feel free to reach out. Our team
+        is here to help you grow your digital presence and take your business to the next level. We look forward to
+        hearing from you!</p>
+      <p>Our office hours are Monday to Friday, from 9 AM to 5 PM. You can also follow us on social media to stay
+        up-to-date with our latest news and offers.</p>
     </section>
+  </main>
 
-    <!-- Footer Section -->
-    <footer class="container-fluid">
-        <div class="row">
-            <p class="col-lg-9 col-md-8 mb-5 mb-md-0">
-                Copyright &copy; 2025 <span class="tm-text-primary">GrowthWave Digital</span>
-            </p>
-        </div>
-    </footer>
+  <footer>
+    <p>&copy; 2025 GrowthWave Digital. Premium Digital Marketing Solutions.</p>
+  </footer>
 
-    <!-- jQuery (CDN) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap Bundle (CDN) -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
-
